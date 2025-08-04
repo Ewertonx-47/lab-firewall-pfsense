@@ -1,8 +1,8 @@
-Laboratório Virtual - pfSense + Lubuntu
+Laboratório Virtual - Virtualbox + pfSense + Lubuntu
 
 Autor: Ewerton Cardoso de SouzaData: 30/07/2025
 
-Simular ambiente de rede com gateway/firewall (pfSense)
+Objetivo: Simular ambiente de rede com gateway/firewall (pfSense)
 
 Controlar acesso à internet e DNS das máquinas cliente (Lubuntu)
 
@@ -10,6 +10,7 @@ Implementar testes de bloqueio por porta e IP
 
 Preparar base para futuros testes com serviços internos (DHCP, Web, DNS local, etc.)
 
+---------------------------------------------------------------------------------
 [ pfSense VM ]
 
 Adaptador 1 (WAN):
@@ -26,6 +27,7 @@ Nome da rede: "Rede interna pfsense"
 
 Objetivo: Rede local para comunicação com outras VMs
 
+---------------------------------------------------------------------------------
 [ Lubuntu VM ]
 
 Adaptador 1:
@@ -48,7 +50,7 @@ Interface LAN:
 
 IP estático: 192.168.100.1/24
 
-DHCP Server ativado
+DHCP Server: ativado
 
 Range: 192.168.100.10 a 192.168.100.100
 
@@ -66,6 +68,7 @@ Gateway padrão: 192.168.100.1
 
 DNS: 192.168.100.1 (configurado pelo pfSense via DHCP)
 
+---------------------------------------------------------------------------------
 Testes de conectividade:
 
 ping 8.8.8.8 → Testa acesso à internet
@@ -74,6 +77,7 @@ nslookup google.com 8.8.8.8 → Testa funcionamento de DNS externo
 
 nslookup google.com → Testa se a máquina está usando o DNS interno (pfSense)
 
+---------------------------------------------------------------------------------
 Regra de firewall criada para bloquear HTTP (porta 80):
 
 Action: Block
@@ -88,6 +92,7 @@ Destination Port: 80
 
 Observação: Impede qualquer acesso da rede interna a sites que utilizam HTTP sem criptografia
 
+---------------------------------------------------------------------------------
 Sites utilizados para teste de HTTP puro (sem redirecionamento para HTTPS):
 
 1 - http://example.com2 - http://neverssl.com3 - http://httpforever.com4 - http://info.cern.ch5 - http://http.badssl.com/
@@ -100,6 +105,7 @@ Outra conectada à LAN do pfSense
 
 O tráfego estava saindo pela interface NAT, bypassando o firewall. Após desativar a interface NAT, o tráfego passou exclusivamente pelo pfSense, e os bloqueios passaram a funcionar corretamente.
 
+---------------------------------------------------------------------------------
 Regra de firewall criada para bloquear consultas DNS externas:
 
 Action: Block
@@ -114,6 +120,7 @@ Destination Port: 53
 
 Observação: Impede que clientes da LAN consultem servidores DNS externos diretamente
 
+---------------------------------------------------------------------------------
 8.1 – Verificação do DNS em uso
 
 Comandos utilizados:
@@ -137,7 +144,8 @@ Resposta esperada:
 Link 2 (enp0s3)
     Current Scopes: DNS
          DNS Servers: 192.168.100.1
-
+         
+---------------------------------------------------------------------------------
 8.2 – Teste de funcionamento do DNS interno
 
 nslookup google.com
@@ -151,6 +159,7 @@ Non-authoritative answer:
 Name:   google.com
 Address: 142.250.78.206
 
+---------------------------------------------------------------------------------
 8.3 – Teste de bloqueio ao DNS externo
 
 nslookup google.com 8.8.8.8
@@ -160,3 +169,5 @@ Resultado:
 ;; connection timed out; no servers could be reached
 
 Confirma que o firewall bloqueou com sucesso o acesso à porta 53 de servidores externos.
+
+---------------------------------------------------------------------------------
