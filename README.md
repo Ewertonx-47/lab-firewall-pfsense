@@ -136,17 +136,19 @@ OBS: Mesma imagem da regra de firewall anterior.
 ---------------------------------------------------------------------------------
 8.1 – Verificação do DNS em uso
 
-Comandos utilizados:
+**Comandos utilizados:**
 
-cat /etc/resolv.conf
+1. cat /etc/resolv.conf
 
-systemd-resolve --status
+2. systemd-resolve --status
 
-nmcli device show
+3. nmcli device show
 
-Resultado comum:
+**Resultado comum:**
 
 nameserver 127.0.0.1
+
+![Resolv](imagens/e-resolv-conf.png)
 
 Esse é um resolvedor local. Para descobrir o DNS real, foi usado:
 
