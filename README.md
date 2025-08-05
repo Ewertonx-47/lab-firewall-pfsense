@@ -159,6 +159,8 @@ Resposta esperada:
 Link 2 (enp0s3)
     Current Scopes: DNS
          DNS Servers: 192.168.100.1
+
+![Status](imagens/f-resolvctl-status.png)
          
 ---------------------------------------------------------------------------------
 8.2 – Teste de funcionamento do DNS interno
