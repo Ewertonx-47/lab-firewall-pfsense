@@ -1,4 +1,4 @@
-Laboratório Virtual - Virtualbox + pfSense + Lubuntu
+*Laboratório Virtual - Virtualbox + pfSense + Lubuntu*
 
 Autor: Ewerton Cardoso de SouzaData: 30/07/2025
 
@@ -11,9 +11,9 @@ Implementar testes de bloqueio por porta e IP
 Preparar base para futuros testes com serviços internos (DHCP, Web, DNS local, etc.)
 
 ---------------------------------------------------------------------------------
-[ pfSense VM ]
+*[ pfSense VM ]*
 
-Adaptador 1 (WAN):
+**Adaptador 1 (WAN):**
 
 Tipo: NAT
 
@@ -21,7 +21,7 @@ Objetivo: Acesso externo à internet via NAT do VirtualBox
 
 ![Rede 1](imagens/a-rede1-pfsense.png)
 
-Adaptador 2 (LAN):
+**Adaptador 2 (LAN):**
 
 Tipo: Rede Interna (Internal Network)
 
@@ -33,13 +33,13 @@ Objetivo: Rede local para comunicação com outras VMs
 
 
 ---------------------------------------------------------------------------------
-[ Lubuntu VM ]
+*[ Lubuntu VM ]*
 
-Adaptador 1:
+**Adaptador 1:**
 
 Tipo: NAT (utilizado apenas para atualizações, se necessário)
 
-Adaptador 2:
+**Adaptador 2:**
 
 Tipo: Rede Interna
 
@@ -76,7 +76,7 @@ Gateway padrão: 192.168.100.1
 DNS: 192.168.100.1 (configurado pelo pfSense via DHCP)
 
 ---------------------------------------------------------------------------------
-Testes de conectividade:
+*Testes de conectividade:*
 
 ping 8.8.8.8 → Testa acesso à internet
 
@@ -85,7 +85,7 @@ nslookup google.com 8.8.8.8 → Testa funcionamento de DNS externo
 nslookup google.com → Testa se a máquina está usando o DNS interno (pfSense)
 
 ---------------------------------------------------------------------------------
-Regra de firewall criada para bloquear HTTP (porta 80):
+*Regra de firewall criada para bloquear HTTP (porta 80):*
 
 Action: Block
 
@@ -103,7 +103,7 @@ Observação: Impede qualquer acesso da rede interna a sites que utilizam HTTP s
 
 
 ---------------------------------------------------------------------------------
-Sites utilizados para teste de HTTP puro (sem redirecionamento para HTTPS):
+*Sites utilizados para teste de HTTP puro (sem redirecionamento para HTTPS):*
 
 1 - http://example.com2 - http://neverssl.com3 - http://httpforever.com4 - http://info.cern.ch5 - http://http.badssl.com/
 
@@ -117,7 +117,7 @@ O tráfego estava saindo pela interface NAT, bypassando o firewall. Após desati
 
 ![Block Http](imagens/i-bloqueio-http.png)
 ---------------------------------------------------------------------------------
-Regra de firewall criada para bloquear consultas DNS externas:
+*Regra de firewall criada para bloquear consultas DNS externas:*
 
 Action: Block
 
@@ -135,7 +135,7 @@ Observação: Impede que clientes da LAN consultem servidores DNS externos diret
 OBS: Mesma imagem da regra de firewall anterior.
 
 ---------------------------------------------------------------------------------
-8.1 – Verificação do DNS em uso
+*Verificação do DNS em uso*
 
 **Comandos utilizados:**
 
@@ -164,7 +164,7 @@ Link 2 (enp0s3)
 ![Status](imagens/f-resolvctl-status.png)
          
 ---------------------------------------------------------------------------------
-8.2 – Teste de funcionamento do DNS interno
+*Teste de funcionamento do DNS interno*
 
 nslookup google.com
 
@@ -180,7 +180,7 @@ Address: 142.250.78.206
 ![Status](imagens/g-nslookup-google.png)
 
 ---------------------------------------------------------------------------------
-8.3 – Teste de bloqueio ao DNS externo
+*Teste de bloqueio ao DNS externo*
 
 nslookup google.com 8.8.8.8
 
