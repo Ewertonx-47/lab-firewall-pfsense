@@ -47,7 +47,7 @@ Nome da rede: "Rede interna pfsense"
 
 Objetivo: Receber IP via DHCP do pfSense e acessar a internet através dele
 
-![Rede 2](imagens/rede-lubuntu.png)
+![Rede Lubuntu](imagens/c-rede-lubuntu.png)
 
 Interface WAN:
 
