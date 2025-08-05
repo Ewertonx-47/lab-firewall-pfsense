@@ -115,6 +115,7 @@ Outra conectada à LAN do pfSense
 
 O tráfego estava saindo pela interface NAT, bypassando o firewall. Após desativar a interface NAT, o tráfego passou exclusivamente pelo pfSense, e os bloqueios passaram a funcionar corretamente.
 
+![Block Http](imagens/i-bloqueio-http.png)
 ---------------------------------------------------------------------------------
 Regra de firewall criada para bloquear consultas DNS externas:
 
