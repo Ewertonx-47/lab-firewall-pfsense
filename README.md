@@ -19,6 +19,8 @@ Tipo: NAT
 
 Objetivo: Acesso externo à internet via NAT do VirtualBox
 
+![Config rede 1](a-rede1-pfsense.png)
+
 Adaptador 2 (LAN):
 
 Tipo: Rede Interna (Internal Network)
