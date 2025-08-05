@@ -19,7 +19,7 @@ Tipo: NAT
 
 Objetivo: Acesso externo à internet via NAT do VirtualBox
 
-![Config rede 1](imagens/a-rede1-pfsense.png)
+![Rede 1](imagens/a-rede1-pfsense.png)
 
 Adaptador 2 (LAN):
 
@@ -29,7 +29,7 @@ Nome da rede: "Rede interna pfsense"
 
 Objetivo: Rede local para comunicação com outras VMs
 
-![Config rede 2](imagens/a-rede2-pfsense.png)
+![Rede 2](imagens/a-rede2-pfsense.png)
 
 
 ---------------------------------------------------------------------------------
