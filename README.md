@@ -167,7 +167,7 @@ Link 2 (enp0s3)
 
 nslookup google.com
 
-Resultado:
+**Resultado:**
 
 Server: 192.168.100.1
 Address: 192.168.100.1#53
@@ -175,6 +175,8 @@ Address: 192.168.100.1#53
 Non-authoritative answer:
 Name:   google.com
 Address: 142.250.78.206
+
+![Status](imagens/g-nslookup-google.png)
 
 ---------------------------------------------------------------------------------
 8.3 – Teste de bloqueio ao DNS externo
