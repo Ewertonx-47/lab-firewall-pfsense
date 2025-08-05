@@ -183,9 +183,11 @@ Address: 142.250.78.206
 
 nslookup google.com 8.8.8.8
 
-Resultado:
+**Resultado:**
 
 ;; connection timed out; no servers could be reached
+
+![Block](imagens/h-nslookup-bloqueado.png)
 
 Confirma que o firewall bloqueou com sucesso o acesso à porta 53 de servidores externos.
 
