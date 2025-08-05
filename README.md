@@ -99,6 +99,9 @@ Destination Port: 80
 
 Observação: Impede qualquer acesso da rede interna a sites que utilizam HTTP sem criptografia
 
+![Regras](imagens/d-regras-firewall.png)
+
+
 ---------------------------------------------------------------------------------
 Sites utilizados para teste de HTTP puro (sem redirecionamento para HTTPS):
 
