@@ -29,6 +29,9 @@ Nome da rede: "Rede interna pfsense"
 
 Objetivo: Rede local para comunicação com outras VMs
 
+![Config rede 2](imagens/a-rede2-pfsense.png)
+
+
 ---------------------------------------------------------------------------------
 [ Lubuntu VM ]
 
